@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.tabelaCustos = new System.Windows.Forms.DataGridView();
-            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.salarioCon = new System.Windows.Forms.Label();
             this.valorFinal = new System.Windows.Forms.Label();
@@ -45,10 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.créditosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btRemove = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.salarioValorN = new System.Windows.Forms.Label();
-            this.créditosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colunaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaCustos)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -104,6 +105,7 @@
             this.tabelaCustos.AllowUserToOrderColumns = true;
             this.tabelaCustos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelaCustos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaID,
             this.Items,
             this.Valor});
             this.tabelaCustos.Enabled = false;
@@ -111,20 +113,8 @@
             this.tabelaCustos.Name = "tabelaCustos";
             this.tabelaCustos.Size = new System.Drawing.Size(442, 214);
             this.tabelaCustos.TabIndex = 5;
+            this.tabelaCustos.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tabelaCustos_RowPostPaint);
             this.tabelaCustos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.tabelaCustos_RowsAdded);
-            // 
-            // Items
-            // 
-            this.Items.HeaderText = "Itens";
-            this.Items.Name = "Items";
-            this.Items.ReadOnly = true;
-            this.Items.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Items.Width = 299;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
             // 
             // panel1
             // 
@@ -214,25 +204,32 @@
             this.toolStripMenuItem1.Text = "Adicionar salário";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
+            // créditosToolStripMenuItem
+            // 
+            this.créditosToolStripMenuItem.Name = "créditosToolStripMenuItem";
+            this.créditosToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.créditosToolStripMenuItem.Text = "Info";
+            this.créditosToolStripMenuItem.Click += new System.EventHandler(this.créditosToolStripMenuItem_Click);
+            // 
             // btRemove
             // 
-            this.btRemove.Enabled = false;
             this.btRemove.Location = new System.Drawing.Point(297, 319);
             this.btRemove.Name = "btRemove";
             this.btRemove.Size = new System.Drawing.Size(75, 23);
             this.btRemove.TabIndex = 8;
             this.btRemove.Text = "Remover";
             this.btRemove.UseVisualStyleBackColor = true;
+            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
             // 
             // btReset
             // 
-            this.btReset.Enabled = false;
             this.btReset.Location = new System.Drawing.Point(382, 319);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 9;
             this.btReset.Text = "Reset";
             this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // salarioValorN
             // 
@@ -244,12 +241,25 @@
             this.salarioValorN.Text = "0";
             this.salarioValorN.Visible = false;
             // 
-            // créditosToolStripMenuItem
+            // colunaID
             // 
-            this.créditosToolStripMenuItem.Name = "créditosToolStripMenuItem";
-            this.créditosToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.créditosToolStripMenuItem.Text = "Info";
-            this.créditosToolStripMenuItem.Click += new System.EventHandler(this.créditosToolStripMenuItem_Click);
+            this.colunaID.HeaderText = "id";
+            this.colunaID.Name = "colunaID";
+            this.colunaID.ReadOnly = true;
+            this.colunaID.Width = 40;
+            // 
+            // Items
+            // 
+            this.Items.HeaderText = "itens";
+            this.Items.Name = "Items";
+            this.Items.ReadOnly = true;
+            this.Items.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Items.Width = 259;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "valor";
+            this.Valor.Name = "Valor";
             // 
             // Form1
             // 
@@ -272,6 +282,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de Custos";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabelaCustos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -289,8 +300,6 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btAdicionar;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Items;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label salarioCon;
         public System.Windows.Forms.Label valorFinal;
@@ -305,6 +314,9 @@
         public System.Windows.Forms.DataGridView tabelaCustos;
         public System.Windows.Forms.Label salarioValorN;
         private System.Windows.Forms.ToolStripMenuItem créditosToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Items;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }
 
