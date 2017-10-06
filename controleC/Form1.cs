@@ -55,6 +55,7 @@ namespace controleC
             }
         }
 
+        //Botão que irá abrir a janela de salário.
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Hide();

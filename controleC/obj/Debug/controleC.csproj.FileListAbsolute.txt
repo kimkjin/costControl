@@ -8,3 +8,6 @@ c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\control
 c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.exe
 c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.pdb
 c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.janelaSalario.resources
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Debug\controleC.exe.config
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.exe
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.pdb
