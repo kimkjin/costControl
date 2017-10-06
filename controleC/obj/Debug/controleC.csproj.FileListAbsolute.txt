@@ -1,0 +1,10 @@
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\bin\Debug\controleC.exe.config
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\bin\Debug\controleC.exe
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\bin\Debug\controleC.pdb
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.csprojResolveAssemblyReference.cache
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.Form1.resources
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.Properties.Resources.resources
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.csproj.GenerateResource.Cache
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.exe
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.pdb
+c:\users\xxnat\onedrive\documentos\visual studio 2015\Projects\controleC\controleC\obj\Debug\controleC.janelaSalario.resources
