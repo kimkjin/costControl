@@ -13,22 +13,22 @@ namespace controleC
 {
     public partial class janelaSalario : Form
     {
-        public janelaSalario()
+        private Form1 principal;
+        public janelaSalario(Form1 frm)
         {
+            principal = frm;
             InitializeComponent();
         }
 
         public void salarioBruto()
         {
-            Form1 jp = new Form1();
-            jp.labelSalario(Convert.ToDouble(txtSalario.Text));
-            jp.salarioNaoConvertido(Convert.ToDouble(txtSalario.Text));
-            jp.txtItem.Enabled = true;
-            jp.txtValor.Enabled = true;
-            jp.btAdicionar.Enabled = true;
-            jp.tabelaCustos.Enabled = true;
-            jp.Show();
-            
+            principal.labelSalario(Convert.ToDouble(txtSalario.Text));
+            principal.salarioNaoConvertido(Convert.ToDouble(txtSalario.Text));
+            principal.txtItem.Enabled = true;
+            principal.txtValor.Enabled = true;
+            principal.btAdicionar.Enabled = true;
+            principal.tabelaCustos.Enabled = true;
+            principal.Show();
             this.Close();
         }
 

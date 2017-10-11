@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtItem = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,14 +43,22 @@
             this.itemValor = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.arquivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.créditosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btRemove = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.salarioValorN = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.colunaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaCustos)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -103,6 +112,9 @@
             // tabelaCustos
             // 
             this.tabelaCustos.AllowUserToOrderColumns = true;
+            this.tabelaCustos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabelaCustos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabelaCustos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.tabelaCustos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelaCustos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaID,
@@ -111,7 +123,8 @@
             this.tabelaCustos.Enabled = false;
             this.tabelaCustos.Location = new System.Drawing.Point(15, 98);
             this.tabelaCustos.Name = "tabelaCustos";
-            this.tabelaCustos.Size = new System.Drawing.Size(442, 214);
+            this.tabelaCustos.RowHeadersVisible = false;
+            this.tabelaCustos.Size = new System.Drawing.Size(508, 214);
             this.tabelaCustos.TabIndex = 5;
             this.tabelaCustos.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tabelaCustos_RowPostPaint);
             this.tabelaCustos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.tabelaCustos_RowsAdded);
@@ -127,13 +140,13 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(-3, 379);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 34);
+            this.panel1.Size = new System.Drawing.Size(598, 34);
             this.panel1.TabIndex = 6;
             // 
             // salarioCon
             // 
             this.salarioCon.AutoSize = true;
-            this.salarioCon.Location = new System.Drawing.Point(209, 9);
+            this.salarioCon.Location = new System.Drawing.Point(251, 9);
             this.salarioCon.Name = "salarioCon";
             this.salarioCon.Size = new System.Drawing.Size(13, 13);
             this.salarioCon.TabIndex = 2;
@@ -142,7 +155,7 @@
             // valorFinal
             // 
             this.valorFinal.AutoSize = true;
-            this.valorFinal.Location = new System.Drawing.Point(397, 9);
+            this.valorFinal.Location = new System.Drawing.Point(449, 9);
             this.valorFinal.Name = "valorFinal";
             this.valorFinal.Size = new System.Drawing.Size(13, 13);
             this.valorFinal.TabIndex = 2;
@@ -152,7 +165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(332, 9);
+            this.label5.Location = new System.Drawing.Point(384, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 2;
@@ -161,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(161, 9);
+            this.label4.Location = new System.Drawing.Point(203, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 2;
@@ -181,21 +194,53 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Itens Total:";
+            this.label3.Text = "Gasto Total:";
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivosToolStripMenuItem,
             this.toolStripMenuItem1,
             this.créditosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(472, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // arquivosToolStripMenuItem
+            // 
+            this.arquivosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem,
+            this.salvarToolStripMenuItem,
+            this.imprimirToolStripMenuItem1,
+            this.sairToolStripMenuItem});
+            this.arquivosToolStripMenuItem.Name = "arquivosToolStripMenuItem";
+            this.arquivosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.arquivosToolStripMenuItem.Text = "Arquivos";
+            // 
+            // salvarToolStripMenuItem
+            // 
+            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salvarToolStripMenuItem.Text = "Salvar";
+            this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
+            // 
+            // imprimirToolStripMenuItem1
+            // 
+            this.imprimirToolStripMenuItem1.Name = "imprimirToolStripMenuItem1";
+            this.imprimirToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+            this.imprimirToolStripMenuItem1.Text = "Imprimir";
+            this.imprimirToolStripMenuItem1.Click += new System.EventHandler(this.imprimirToolStripMenuItem1_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
             // 
             // toolStripMenuItem1
             // 
@@ -213,7 +258,7 @@
             // 
             // btRemove
             // 
-            this.btRemove.Location = new System.Drawing.Point(297, 319);
+            this.btRemove.Location = new System.Drawing.Point(363, 318);
             this.btRemove.Name = "btRemove";
             this.btRemove.Size = new System.Drawing.Size(75, 23);
             this.btRemove.TabIndex = 8;
@@ -223,7 +268,7 @@
             // 
             // btReset
             // 
-            this.btReset.Location = new System.Drawing.Point(382, 319);
+            this.btReset.Location = new System.Drawing.Point(448, 318);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 9;
@@ -241,6 +286,21 @@
             this.salarioValorN.Text = "0";
             this.salarioValorN.Visible = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // colunaID
             // 
             this.colunaID.HeaderText = "id";
@@ -254,18 +314,24 @@
             this.Items.Name = "Items";
             this.Items.ReadOnly = true;
             this.Items.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Items.Width = 259;
+            this.Items.Width = 366;
             // 
             // Valor
             // 
             this.Valor.HeaderText = "valor";
             this.Valor.Name = "Valor";
             // 
+            // abrirToolStripMenuItem
+            // 
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abrirToolStripMenuItem.Text = "Abrir";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 410);
+            this.ClientSize = new System.Drawing.Size(535, 408);
             this.Controls.Add(this.salarioValorN);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.btRemove);
@@ -314,9 +380,17 @@
         public System.Windows.Forms.DataGridView tabelaCustos;
         public System.Windows.Forms.Label salarioValorN;
         private System.Windows.Forms.ToolStripMenuItem créditosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arquivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Items;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
