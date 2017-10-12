@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -366,7 +367,7 @@ namespace controleC
                 if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Export Successful");
+                    MessageBox.Show("Salvo com sucesso!");
                 }
             }
             catch (System.Exception ex)
@@ -382,5 +383,13 @@ namespace controleC
 
 
         }
+
+        DataSet result;
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+            
     }
 }
