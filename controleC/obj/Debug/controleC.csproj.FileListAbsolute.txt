@@ -18,3 +18,5 @@ C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.Form1.reso
 C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.janelaSalario.resources
 C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.Properties.Resources.resources
 C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Debug\controleC.csproj.GenerateResource.Cache
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Debug\ExcelDataReader.dll
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Debug\ExcelDataReader.xml

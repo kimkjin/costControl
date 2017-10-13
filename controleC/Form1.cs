@@ -1,18 +1,13 @@
 ﻿using ExcelDataReader;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace controleC
 {
@@ -384,12 +379,9 @@ namespace controleC
 
         }
 
-        DataSet result;
-
-        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
-            
     }
 }
