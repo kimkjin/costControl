@@ -244,21 +244,21 @@
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem1
             // 
             this.imprimirToolStripMenuItem1.Name = "imprimirToolStripMenuItem1";
-            this.imprimirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.imprimirToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.imprimirToolStripMenuItem1.Text = "Imprimir";
             this.imprimirToolStripMenuItem1.Click += new System.EventHandler(this.imprimirToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -349,6 +349,8 @@
             this.Controls.Add(this.txtItem);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

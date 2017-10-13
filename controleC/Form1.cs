@@ -1,13 +1,8 @@
-﻿using ExcelDataReader;
-using System;
+﻿using System;
 using System.Collections;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.IO;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace controleC
 {

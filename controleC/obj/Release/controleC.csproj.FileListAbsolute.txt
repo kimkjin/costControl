@@ -1,0 +1,12 @@
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Release\controleC.exe.config
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Release\controleC.exe
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Release\controleC.pdb
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Release\ExcelDataReader.dll
+C:\Users\xxnat\Source\Repos\costControl\controleC\bin\Release\ExcelDataReader.xml
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.csprojResolveAssemblyReference.cache
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.Form1.resources
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.janelaSalario.resources
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.Properties.Resources.resources
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.csproj.GenerateResource.Cache
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.exe
+C:\Users\xxnat\Source\Repos\costControl\controleC\obj\Release\controleC.pdb
